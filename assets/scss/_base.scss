@@ -7,10 +7,26 @@
 // Da' Body
 //--------------------------------------
 
-body { font-size: 62.5% }
+body { font-size: 62.5%; }
 
 //--------------------------------------
-// Font
+// Color's
 //--------------------------------------
+
+
+$green: #33a55d;
+$greyLight: #929496;
+$greyMedium: #4e4f59;
+$greyDark: #252525;
+
+//--------------------------------------
+// Font's
+//--------------------------------------
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:700);
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700);
+
+$paragraph: 'Lora', serif;
+$header: 'Ubuntu', sans-serif;
 
 a { text-decoration: none; }
