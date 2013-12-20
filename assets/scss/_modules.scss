@@ -9,16 +9,55 @@
 
 .glb { overflow: hidden; }
 
-.glb-footer {}
+.glb-footer { background: url(../images/footer.jpg); }
+.glb-footer-col { float: left; }
+.glb-footer-col + .glb-footer-col { float: right; }
+.glb-footer-col_left { width: 555px; }
+.glb-footer-col_right { width: 260px; }
 
 //--------------------------------------
 // Box
 //--------------------------------------
 
-.box { padding: 50px 0; }
+.box {
+	padding: 50px 0;
+	overflow: hidden;
+}
 
 //--------------------------------------
 // Hdg's
 //--------------------------------------
 
-.hdg { font-family: $header; }
+.hdgWrap {
+	padding-bottom: 20px;
+}
+
+.hdg {
+	color: $green;
+	font-family: $header;
+}
+
+.hdg_dark { color: $greyMedium; }
+.hdg_1 { font-size: 32px; }
+.hdg_2 { font-size: 28px; }
+.hdg_3 { font-size: 18px; }
+
+//--------------------------------------
+// Testimonials
+//--------------------------------------
+
+.testimonials-hd { padding-bottom: 27px; }
+
+.testimonials-bd > * {
+	color: #d4d4d2;
+	font-size: 18px;
+	line-height: 1.4;
+}
+
+.testimonials-ft { padding-top: 30px; }
+
+.testimonials-ft > * {
+	color: #bfb2a0;
+	font-size: 18px;
+	font-weight: bold;
+}
