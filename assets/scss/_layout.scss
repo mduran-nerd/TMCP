@@ -12,3 +12,13 @@
 	margin: auto;
 	overflow: hidden;
 }
+
+.blocks {
+	overflow: hidden;
+	margin-left: -2%;
+}
+
+.blocks_2up > * {
+	width: 48%;
+	margin-left: 2%;
+}
