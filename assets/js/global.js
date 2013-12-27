@@ -19,7 +19,7 @@ var NERD = NERD || {};
             this.createControls();
             this.position = 0;
             this.bindEvents();
-            this.interval = setInterval(this.autoPlay,3000);
+            this.interval = setInterval(this.autoPlay,5000);
         },
         setInnerWidth: function(){
             this.$inner
@@ -55,7 +55,7 @@ var NERD = NERD || {};
                 self.toggleActive($(this));
                 self.getPosition($(this));
                 self.moveSlider(self.position);
-                self.interval = setInterval(self.autoPlay,3000);
+                self.interval = setInterval(self.autoPlay,5000);
             });
         },
         autoPlay: function(){
