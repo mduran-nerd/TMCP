@@ -14,11 +14,17 @@
 }
 
 .blocks {
+	float:left;
 	overflow: hidden;
 	margin-left: -2%;
 }
 
 .blocks_2up > * {
 	width: 48%;
+	margin-left: 2%;
+}
+
+.blocks_3up > * {
+	width: 33.33%;
 	margin-left: 2%;
 }
