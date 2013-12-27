@@ -61,3 +61,52 @@
 	font-size: 18px;
 	font-weight: bold;
 }
+
+//--------------------------------------
+// Slider
+//--------------------------------------
+
+.slider {
+	max-width: 960px;
+	margin: auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.slider-inner {
+	float: left;
+	transition: all .5s ease-in-out;
+}
+
+.slider-slide {
+	float: left;
+	display: block;
+}
+
+.slider-slide_1of4 { width: 25%; }
+
+.slider-slide img {
+	width: 100%;
+	display: block;
+}
+
+.slider-cntrls {
+	width: 100%;
+	padding: 10px 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: red;
+	text-align: center;
+}
+
+.slider-cntrl {
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	margin: 0 5px;
+	border-radius: 50%;
+	background: black;
+}
+
+.slider-cntrl_isActive { background: blue; }
