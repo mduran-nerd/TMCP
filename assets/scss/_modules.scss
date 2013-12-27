@@ -88,6 +88,7 @@
 .slider-slide {
 	float: left;
 	display: block;
+	position: relative;
 }
 
 .slider-slide_1of4 { width: 25%; }
@@ -118,5 +119,10 @@
 
 .slider-cntrl_isActive { background: blue; }
 
-.slider-cntrl_isActive { background: blue; }
-
+.slider-capt {
+	padding: 15px;
+	position: absolute;
+	top: 60px;
+	right: 0px;
+	z-index: 1;
+}
