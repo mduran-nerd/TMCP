@@ -3,17 +3,108 @@
 // Modules
 //--------------------------------------
 
+.logo {
+	float:left;
+	margin:13px 0 0 55px;
+}
+
+.header-slogan {
+	margin:42px 0 0 0;
+	text-align:center;
+	width:680px;
+}
+
+.headline {
+	display:block;
+	color:$green;
+	font-family:$header;
+	font-weight:bold;
+	font-size:36px;
+	margin:0 0 8px 0;
+}
+
+.sub-headline {
+	font-family:$paragraph;
+	font-style:italic;
+	font-size:24px;
+	color:black;
+}
+
 //--------------------------------------
 // Global Stuff
 //--------------------------------------
 
 .glb { overflow: hidden; }
 
+.glb-header {
+	background: url(../images/glb-header-stripe.jpg) top repeat-x;
+	padding: 15px 0 0 0;
+}
+
+.glb-header_right {
+	float: right;
+}
+
 .glb-footer { background: url(../images/footer.jpg); }
 .glb-footer-col { float: left; }
 .glb-footer-col + .glb-footer-col { float: right; }
 .glb-footer-col_left { width: 555px; }
 .glb-footer-col_right { width: 260px; }
+
+//--------------------------------------
+// Navigation
+//--------------------------------------
+.glb-nav {
+	margin:12px 0 0 0;
+	background: #929496;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzkyOTQ5NiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3ZTgwODMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #929496 0%, #7e8083 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#929496), color-stop(100%,#7e8083));
+	background: -webkit-linear-gradient(top,  #929496 0%,#7e8083 100%);
+	background: -o-linear-gradient(top,  #929496 0%,#7e8083 100%);
+	background: -ms-linear-gradient(top,  #929496 0%,#7e8083 100%);
+	background: linear-gradient(to bottom,  #929496 0%,#7e8083 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#929496', endColorstr='#7e8083',GradientType=0 );
+	border-bottom:5px solid $greyMedium;
+
+
+	ul {
+		text-align:center;
+		font-family:$header;
+		text-transform:uppercase;
+		font-size:18px;
+		font-weight:bold;
+
+		li {
+			margin:15px 0;
+
+			a {
+				color:white;
+
+				&:hover {
+					color:darken(white,12%);
+				}
+			}
+		}
+	}
+}
+
+.glb-nav .vList > * + * {
+	margin-left:70px;
+	position:relative;
+
+	&:before {
+		content:"";
+		background:$greyMedium;
+		position:absolute;
+		width:5px;
+		height:5px;
+		border-radius:50% 50%;
+		left:-35px;
+		top:8px;
+	}
+}
+
 
 //--------------------------------------
 // Box
@@ -43,6 +134,24 @@
 .hdg_3 { font-size: 18px; }
 
 //--------------------------------------
+// Buttons
+//--------------------------------------
+
+.login {
+	display:table;
+	color: $greyMedium;
+	font-family: $paragraph;
+	font-size:16px;
+	font-weight: bold;
+	font-style: italic;
+	text-transform: uppercase;
+	border-radius: 0 0 5px 5px;
+	padding: 5px 30px;
+	margin:0 0 0 425px;
+	@include button-bg($tan);
+}
+
+//--------------------------------------
 // Testimonials
 //--------------------------------------
 
@@ -70,8 +179,15 @@
 	position: absolute;
   	clip: rect(0, 0, 0, 0);
 }
+
+//--------------------------------------
 // Slider
 //--------------------------------------
+
+.slider-wrap {
+	background:url(../images/slider-bg.jpg);
+	border-bottom:5px solid $greyMedium;
+}
 
 .slider {
 	max-width: 960px;
@@ -104,7 +220,7 @@
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	background: red;
+	background: transparent;
 	text-align: center;
 }
 
@@ -114,15 +230,30 @@
 	display: inline-block;
 	margin: 0 5px;
 	border-radius: 50%;
-	background: black;
+	background: $greyLight;
+	box-shadow: inset 1px 1px 2px rgba(0,0,0,0.8);
 }
 
-.slider-cntrl_isActive { background: blue; }
+.slider-cntrl_isActive { background: $greyMedium; }
 
 .slider-capt {
-	padding: 15px;
+	padding: 15px 15px 15px 50px;
 	position: absolute;
-	top: 60px;
+	top: 25px;
 	right: 0px;
 	z-index: 1;
+	color:white;
+	font-family:$header;
+	font-size:30px;
+	font-style:italic;
+	text-shadow:1px 1px 3px rgba(0,0,0,1);
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjE1JSIgc3RvcC1jb2xvcj0iIzRlNGY1OSIgc3RvcC1vcGFjaXR5PSIwLjQ5Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjIwJSIgc3RvcC1jb2xvcj0iIzRlNGY1OSIgc3RvcC1vcGFjaXR5PSIwLjY1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjM4JSIgc3RvcC1jb2xvcj0iIzRlNGY1OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0ZTRmNTkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(78,79,89,0.49) 15%, rgba(78,79,89,0.65) 20%, rgba(78,79,89,1) 38%, rgba(78,79,89,1) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(15%,rgba(78,79,89,0.49)), color-stop(20%,rgba(78,79,89,0.65)), color-stop(38%,rgba(78,79,89,1)), color-stop(100%,rgba(78,79,89,1)));
+	background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(78,79,89,0.49) 15%,rgba(78,79,89,0.65) 20%,rgba(78,79,89,1) 38%,rgba(78,79,89,1) 100%);
+	background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(78,79,89,0.49) 15%,rgba(78,79,89,0.65) 20%,rgba(78,79,89,1) 38%,rgba(78,79,89,1) 100%);
+	background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(78,79,89,0.49) 15%,rgba(78,79,89,0.65) 20%,rgba(78,79,89,1) 38%,rgba(78,79,89,1) 100%);
+	background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(78,79,89,0.49) 15%,rgba(78,79,89,0.65) 20%,rgba(78,79,89,1) 38%,rgba(78,79,89,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#4e4f59',GradientType=1 );
+
 }
