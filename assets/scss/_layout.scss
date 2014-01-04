@@ -3,9 +3,7 @@
 // Layouts
 //--------------------------------------
 
-.vList > * {
-	display:inline-block;
-}
+.vList > * { display:inline-block; }
 
 //--------------------------------------
 // Container
@@ -14,14 +12,16 @@
 .container {
 	max-width: 960px;
 	margin: auto;
-	overflow: hidden;
+	@include clearfix;
 }
 
 .blocks {
-	float:left;
 	overflow: hidden;
 	margin-left: -2%;
+	list-style: none;
 }
+
+.blocks > * { float: left; }
 
 .blocks_2up > * {
 	width: 48%;
@@ -30,5 +30,10 @@
 
 .blocks_3up > * {
 	width: 33.33%;
+	margin-left: 2%;
+}
+
+.blocks_4up > * {
+	width: 23%;
 	margin-left: 2%;
 }

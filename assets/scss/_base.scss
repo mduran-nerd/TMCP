@@ -29,6 +29,8 @@ $tan: #d4d4d2;
 // Mixins
 //--------------------------------------
 
+// Button
+
 @mixin button-bg($bg) {
   background: $bg;
   &:hover {
@@ -40,6 +42,30 @@ $tan: #d4d4d2;
   } 
 }
 
+// Bottom Shadow
+
+@mixin bottomShadow {
+    &:after {
+        content: "";
+        width: 100%;
+        height: 42px;
+        position: absolute;
+        bottom: -42px;
+        left: 0;
+        background: url(../images/bottomShadow.png) center top no-repeat;
+    }
+}
+
+// Clearfix
+
+@mixin clearfix {
+    &:before, &:after {
+        content: "";
+        width: 100%;
+        display: table;
+        clear: both;
+    }
+}
 
 //--------------------------------------
 // Fonts
