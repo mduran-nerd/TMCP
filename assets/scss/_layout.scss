@@ -3,9 +3,7 @@
 // Layouts
 //--------------------------------------
 
-.vList > * {
-	display:inline-block;
-}
+.vList > * { display:inline-block; }
 
 //--------------------------------------
 // Container
@@ -14,7 +12,7 @@
 .container {
 	max-width: 960px;
 	margin: auto;
-	overflow: hidden;
+	@include clearfix;
 }
 
 //--------------------------------------
@@ -52,14 +50,20 @@
 //--------------------------------------
 
 .blocks {
-	float:left;
 	overflow: hidden;
+<<<<<<< HEAD
 	margin:20px 0 20px -2%;
 }
 
 [class^="blocks_"] {
 	list-style:none;
+=======
+	margin-left: -2%;
+	list-style: none;
+>>>>>>> 2be76f045f61be12851cd612686419e1cd32a7a5
 }
+
+.blocks > * { float: left; }
 
 .blocks_2up > * {
 	float:left;
@@ -68,8 +72,19 @@
 }
 
 .blocks_3up > * {
+<<<<<<< HEAD
 	float:left;
 	width: 33.33% - $block-margin;
 	margin-left: $block-margin;
 }
 
+=======
+	width: 33.33%;
+	margin-left: 2%;
+}
+
+.blocks_4up > * {
+	width: 23%;
+	margin-left: 2%;
+}
+>>>>>>> 2be76f045f61be12851cd612686419e1cd32a7a5

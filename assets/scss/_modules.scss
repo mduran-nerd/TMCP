@@ -54,6 +54,7 @@
 //--------------------------------------
 // Navigation
 //--------------------------------------
+
 .glb-nav {
 	margin:12px 0 0 0;
 	background: #929496;
@@ -92,7 +93,6 @@
 .glb-nav .vList > * + * {
 	margin-left:70px;
 	position:relative;
-
 	&:before {
 		content:"";
 		background:$greyMedium;
@@ -105,14 +105,18 @@
 	}
 }
 
-
 //--------------------------------------
 // Box
 //--------------------------------------
 
 .box {
 	padding: 50px 0;
-	overflow: hidden;
+	position: relative;
+}
+
+.box_tan {
+	background: url(../images/slider-bg.jpg);
+    @include bottomShadow;
 }
 
 //--------------------------------------
@@ -206,6 +210,30 @@
 }
 
 //--------------------------------------
+// Area
+//--------------------------------------
+
+.area { text-align: center; }
+
+.area-hd {
+	padding-bottom: 20px;
+	font-size: 18px;
+}
+
+.area-bd {
+	padding: 10px 0 0;
+	color: #464646;
+	font-size: 14px;
+	line-height: 1.2;
+	p { font-family: $header; }
+	a {
+		font-family: $header;
+		color: #bfb2a0;
+		&:hover { text-decoration: underline; }
+	}
+}
+
+//--------------------------------------
 // Slider
 //--------------------------------------
 
@@ -223,7 +251,7 @@
 
 .slider-inner {
 	float: left;
-	transition: all .5s ease-in-out;
+	transition: margin-left .5s ease-in-out;
 }
 
 .slider-slide {
@@ -249,7 +277,7 @@
 	text-align: center;
 }
 
-.slider-cntrl {
+.slider-cntrls-cntrl {
 	width: 10px;
 	height: 10px;
 	display: inline-block;
@@ -257,9 +285,10 @@
 	border-radius: 50%;
 	background: $greyLight;
 	box-shadow: inset 1px 1px 2px rgba(0,0,0,0.8);
+	cursor: pointer;
 }
 
-.slider-cntrl_isActive { background: $greyMedium; }
+.slider-cntrls-cntrl_isActive { background: $greyMedium; }
 
 .slider-capt {
 	padding: 15px 15px 15px 50px;

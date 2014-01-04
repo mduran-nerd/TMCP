@@ -15,6 +15,7 @@ var NERD = NERD || {};
             this.slideCount = this.$inner
                                   .children()
                                   .length;
+            this.slideCountClone = this.slideCount;                      
             this.setInnerWidth();
             this.createControls();
             this.position = 0;
@@ -29,15 +30,15 @@ var NERD = NERD || {};
             this.$slider
                 .append('<div class="slider-cntrls" />');
             while(this.slideCount > 0) {
-                $('.slider-cntrls').append('<span class="slider-cntrl"/>');
+                $('.slider-cntrls').append('<span class="slider-cntrls-cntrl"/>');
                 this.slideCount--;
             }
-            $('.slider-cntrl:first').addClass('slider-cntrl_isActive');
+            $('.slider-cntrls-cntrl:first').addClass('slider-cntrls-cntrl_isActive');
         },
         toggleActive: function(target){
-            $(target).toggleClass('slider-cntrl_isActive')
+            $(target).toggleClass('slider-cntrls-cntrl_isActive')
                      .siblings()
-                     .removeClass('slider-cntrl_isActive');
+                     .removeClass('slider-cntrls-cntrl_isActive');
         },
         getPosition: function(target){
             this.position = $(target).index();
@@ -50,7 +51,7 @@ var NERD = NERD || {};
         },
         bindEvents: function(){
             var self = this;
-            $('.slider-cntrl').on('click',function(){
+            $('.slider-cntrls-cntrl').on('click',function(){
                 clearInterval(self.interval);
                 self.toggleActive($(this));
                 self.getPosition($(this));
@@ -60,10 +61,10 @@ var NERD = NERD || {};
         },
         autoPlay: function(){
             APP.slider.position++;
-            if(APP.slider.position == 4) { // TODO -- get APP.slider.slideCount to work
+            if(APP.slider.position == APP.slider.slideCountClone) {
                 APP.slider.position = 0;
             }
-            APP.slider.toggleActive($('.slider-cntrl:nth-child('+(APP.slider.position + 1)+')'));
+            APP.slider.toggleActive($('.slider-cntrls-cntrl:nth-child('+(APP.slider.position + 1)+')'));
             APP.slider.moveSlider(APP.slider.position);
         }
     };
