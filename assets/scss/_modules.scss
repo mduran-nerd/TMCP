@@ -338,6 +338,7 @@
 //--------------------------------------
 // Post Module
 //--------------------------------------
+
 .hdg_2-underline {
 	text-align:center;
 	padding:5px 0;
@@ -360,4 +361,15 @@
 	a {
 		color:$greyDark;
 	}
+}
+
+//--------------------------------------
+// Content Slider
+//--------------------------------------
+
+.contentSlider { float: left; }
+
+.contentSlider-cntrls {
+	display: table;
+	clear: both;
 }

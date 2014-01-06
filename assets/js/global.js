@@ -1,10 +1,10 @@
-
 var NERD = NERD || {};
 
 (function ($, APP){
 
     $(function(){
         APP.slider.init($('.js-slider'));
+        APP.contentSlider.init();
     });
 
     APP.slider = {
@@ -66,6 +66,21 @@ var NERD = NERD || {};
             }
             APP.slider.toggleActive($('.slider-cntrls-cntrl:nth-child('+(APP.slider.position + 1)+')'));
             APP.slider.moveSlider(APP.slider.position);
+        }
+    };
+
+    APP.contentSlider = {
+        init: function(){
+            this.$container = $('.js-contentSlider');
+            this.childCnt = this.$container
+                                .children()
+                                .length;
+            this.appendControlsWrap();
+        },
+        appendControlsWrap: function(){
+            this.$container
+                .append('<div class="contentSlider-cntrls"/>');
+            this.$cntrlsWrap = $('.contentSlider-cntrls');
         }
     };
 
